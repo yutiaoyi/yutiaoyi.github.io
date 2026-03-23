@@ -1849,8 +1849,13 @@ _**User**_
 
 _**Agent (default)**_
 
+好，我现在直接落地“最小可用版”：  
+1) 新增 `projects` 集合；2) 建 `_projects/` 并放项目条目；3) 把 `projects.html` 改成自动读取集合渲染。完成后你只需新增 markdown 文件即可。
+
+_**Agent (default)**_
+
 <tool-use data-tool-type="read" data-tool-name="read_file_v2">
-<details><summary>Tool use: **read_file_v2** • Read file: </summary>
+<details><summary>Tool use: **read_file_v2** • Read file: /Users/yutiaoyi/developer/temp_yutiaoyi_github_io/_publications/2026/2026-cvpr-uav.md</summary>
 
 </details>
 </tool-use>
@@ -1863,7 +1868,7 @@ _**Agent (default)**_
 _**Agent (default)**_
 
 <tool-use data-tool-type="read" data-tool-name="read_file_v2">
-<details><summary>Tool use: **read_file_v2** • Read file: </summary>
+<details><summary>Tool use: **read_file_v2** • Read file: /Users/yutiaoyi/developer/temp_yutiaoyi_github_io/projects.html</summary>
 
 </details>
 </tool-use>
@@ -1876,12 +1881,325 @@ _**Agent (default)**_
 _**Agent (default)**_
 
 <tool-use data-tool-type="read" data-tool-name="read_file_v2">
-<details><summary>Tool use: **read_file_v2** • Read file: </summary>
+<details><summary>Tool use: **read_file_v2** • Read file: /Users/yutiaoyi/developer/temp_yutiaoyi_github_io/_config.yml</summary>
 
 </details>
 </tool-use>
 
 <tool-use data-tool-type="read" data-tool-name="read_file_v2"><details>
 <summary>Tool use: **read_file_v2**</summary>
+
+</details></tool-use>
+
+_**Agent (default)**_
+
+下一步我会创建 `_projects/` 并把你现有 5 个项目迁移进去，然后把 `projects.html` 改成自动循环渲染（以后只增删文件，不改页面模板）。
+
+_**Agent (default)**_
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2">
+
+<details><summary>Tool use: **edit_file_v2** • Edit file: /Users/yutiaoyi/developer/temp_yutiaoyi_github_io/_config.yml</summary>
+
+</details>
+
+</tool-use>
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2"><details>
+<summary>Tool use: **edit_file_v2**</summary>
+
+</details></tool-use>
+
+_**Agent (default)**_
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2">
+
+<details><summary>Tool use: **edit_file_v2** • Edit file: /Users/yutiaoyi/developer/temp_yutiaoyi_github_io/_includes/widgets/project_item.html</summary>
+
+</details>
+
+</tool-use>
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2"><details>
+<summary>Tool use: **edit_file_v2**</summary>
+
+</details></tool-use>
+
+_**Agent (default)**_
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2">
+
+<details><summary>Tool use: **edit_file_v2** • Edit file: /Users/yutiaoyi/developer/temp_yutiaoyi_github_io/_projects/pbr-relighting-lod-3dgs.md</summary>
+
+</details>
+
+</tool-use>
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2"><details>
+<summary>Tool use: **edit_file_v2**</summary>
+
+</details></tool-use>
+
+_**Agent (default)**_
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2">
+
+<details><summary>Tool use: **edit_file_v2** • Edit file: /Users/yutiaoyi/developer/temp_yutiaoyi_github_io/_projects/rl-adaptive-sketch-generation.md</summary>
+
+</details>
+
+</tool-use>
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2"><details>
+<summary>Tool use: **edit_file_v2**</summary>
+
+</details></tool-use>
+
+_**Agent (default)**_
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2">
+
+<details><summary>Tool use: **edit_file_v2** • Edit file: /Users/yutiaoyi/developer/temp_yutiaoyi_github_io/_projects/paintopia-multi-agent-drawing.md</summary>
+
+</details>
+
+</tool-use>
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2"><details>
+<summary>Tool use: **edit_file_v2**</summary>
+
+</details></tool-use>
+
+_**Agent (default)**_
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2">
+
+<details><summary>Tool use: **edit_file_v2** • Edit file: /Users/yutiaoyi/developer/temp_yutiaoyi_github_io/_projects/quantitative-options-trading.md</summary>
+
+</details>
+
+</tool-use>
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2"><details>
+<summary>Tool use: **edit_file_v2**</summary>
+
+</details></tool-use>
+
+_**Agent (default)**_
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2">
+
+<details><summary>Tool use: **edit_file_v2** • Edit file: /Users/yutiaoyi/developer/temp_yutiaoyi_github_io/_projects/fiber-level-procedural-modeling-fabrics.md</summary>
+
+</details>
+
+</tool-use>
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2"><details>
+<summary>Tool use: **edit_file_v2**</summary>
+
+</details></tool-use>
+
+_**Agent (default)**_
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2">
+
+<details><summary>Tool use: **edit_file_v2** • Edit file: /Users/yutiaoyi/developer/temp_yutiaoyi_github_io/projects.html</summary>
+
+</details>
+
+</tool-use>
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2"><details>
+<summary>Tool use: **edit_file_v2**</summary>
+
+</details></tool-use>
+
+_**Agent (default)**_
+
+<tool-use data-tool-type="unknown" data-tool-name="read_lints">
+<details>
+<summary>Tool use: **read_lints**</summary>
+
+
+Parameters:
+
+```json
+{
+  "paths": [
+    "/Users/yutiaoyi/developer/temp_yutiaoyi_github_io/projects.html",
+    "/Users/yutiaoyi/developer/temp_yutiaoyi_github_io/_includes/widgets/project_item.html",
+    "/Users/yutiaoyi/developer/temp_yutiaoyi_github_io/_config.yml",
+    "/Users/yutiaoyi/developer/temp_yutiaoyi_github_io/_projects"
+  ]
+}
+```
+Result:
+
+```json
+{
+  "linterErrorsByFile": [
+    {
+      "relativeWorkspacePath": "/Users/yutiaoyi/developer/temp_yutiaoyi_github_io/projects.html"
+    },
+    {
+      "relativeWorkspacePath": "/Users/yutiaoyi/developer/temp_yutiaoyi_github_io/_includes/widgets/project_item.html"
+    },
+    {
+      "relativeWorkspacePath": "/Users/yutiaoyi/developer/temp_yutiaoyi_github_io/_config.yml"
+    },
+    {
+      "relativeWorkspacePath": "/Users/yutiaoyi/developer/temp_yutiaoyi_github_io/_projects"
+    }
+  ]
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+<tool-use data-tool-type="unknown" data-tool-name="read_lints"><details>
+<summary>Tool use: **read_lints**</summary>
+
+</details></tool-use>
+
+_**Agent (default)**_
+
+已帮你把“最小可用版”落地好了，而且是按 `news/publications` 的思路做的集合化管理。
+
+## 已完成的改造
+
+- 新增 `projects` 集合：`_config.yml`
+- 新增项目目录：`_projects/`
+- 把你原来 `projects.html` 里的 5 个项目迁移为独立 markdown 文件：
+  - `_projects/pbr-relighting-lod-3dgs.md`
+  - `_projects/rl-adaptive-sketch-generation.md`
+  - `_projects/paintopia-multi-agent-drawing.md`
+  - `_projects/quantitative-options-trading.md`
+  - `_projects/fiber-level-procedural-modeling-fabrics.md`
+- 新增项目卡片模板：`_includes/widgets/project_item.html`
+- 重写 `projects.html`：自动遍历 `site.projects` 渲染，不再手写每个项目块。
+
+## 现在你怎么维护项目
+
+以后你只需要在 `_projects/` 里新增一个 `.md` 文件，例如：
+
+```yaml
+---
+title: "My New Project"
+date: 2026-03-24 00:00:00 +0800
+role: "Research Project"
+summary: "..."
+tags:
+  - 3D Vision
+  - Rendering
+links:
+  Code: https://github.com/...
+  Demo: https://...
+---
+```
+
+页面会自动更新并按 `date` 倒序显示。
+
+## 你现在要做的一件事
+
+因为改了 `_config.yml`，Jekyll 不会热重载配置。  
+请重启本地服务一次：
+
+- 停掉当前 `jekyll serve`
+- 重新运行 `bundle exec jekyll serve`
+
+---
+
+如果你愿意，我下一步可以继续帮你做 **V2**（仍很轻量）：
+- 支持项目详情页（每个 project 点进去有完整图文）
+- 在 `projects.html` 加年份分组或标签筛选（和 publications 一样更清晰）。
+
+---
+
+_**User**_
+
+@projects.html @publications.html Projects 页面的实现可以参考 Publication 的布局吗？以及它的字体大小等等
+
+---
+
+_**Agent (default)**_
+
+可以，我直接把 `Projects` 页改成和 `Publications` 同一套布局逻辑：按年份分组、右侧年份锚点导航、接近的字号与卡片间距风格。先看下 publication 的 item 模板后我来同步。
+
+_**Agent (default)**_
+
+<tool-use data-tool-type="read" data-tool-name="read_file_v2">
+<details><summary>Tool use: **read_file_v2** • Read file: /Users/yutiaoyi/developer/temp_yutiaoyi_github_io/_includes/widgets/publication_item.html</summary>
+
+</details>
+</tool-use>
+
+<tool-use data-tool-type="read" data-tool-name="read_file_v2"><details>
+<summary>Tool use: **read_file_v2**</summary>
+
+</details></tool-use>
+
+_**Agent (default)**_
+
+<tool-use data-tool-type="read" data-tool-name="read_file_v2">
+<details><summary>Tool use: **read_file_v2** • Read file: /Users/yutiaoyi/developer/temp_yutiaoyi_github_io/publications.html</summary>
+
+</details>
+</tool-use>
+
+<tool-use data-tool-type="read" data-tool-name="read_file_v2"><details>
+<summary>Tool use: **read_file_v2**</summary>
+
+</details></tool-use>
+
+_**Agent (default)**_
+
+<tool-use data-tool-type="read" data-tool-name="read_file_v2">
+<details><summary>Tool use: **read_file_v2** • Read file: /Users/yutiaoyi/developer/temp_yutiaoyi_github_io/projects.html</summary>
+
+</details>
+</tool-use>
+
+<tool-use data-tool-type="read" data-tool-name="read_file_v2"><details>
+<summary>Tool use: **read_file_v2**</summary>
+
+</details></tool-use>
+
+_**Agent (default)**_
+
+<tool-use data-tool-type="read" data-tool-name="read_file_v2">
+<details><summary>Tool use: **read_file_v2** • Read file: /Users/yutiaoyi/developer/temp_yutiaoyi_github_io/_includes/widgets/project_item.html</summary>
+
+</details>
+</tool-use>
+
+<tool-use data-tool-type="read" data-tool-name="read_file_v2"><details>
+<summary>Tool use: **read_file_v2**</summary>
+
+</details></tool-use>
+
+_**Agent (default)**_
+
+我会做两处：  
+1) `projects.html` 改成与 `publications.html` 同款（按年份分组 + 右侧年份导航）；  
+2) `project_item.html` 的标题/正文字号改成更接近 publication 的层级。
+
+_**Agent (default)**_
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2">
+
+<details><summary>Tool use: **edit_file_v2** • Edit file: /Users/yutiaoyi/developer/temp_yutiaoyi_github_io/projects.html</summary>
+
+Status: **loading**
+
+</details>
+
+</tool-use>
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2"><details>
+<summary>Tool use: **edit_file_v2**</summary>
 
 </details></tool-use>
