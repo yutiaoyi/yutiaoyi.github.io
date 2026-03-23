@@ -1,0 +1,27 @@
+<div class="p-4 {% unless include.hide_bottom_border %}border-bottom{% endunless %}">
+    <h4 class="mb-1">{{ include.item.title }}</h4>
+
+    {% if include.item.role %}
+    <p class="text-muted mb-2">{{ include.item.role }}</p>
+    {% endif %}
+
+    {% if include.item.summary %}
+    <p class="mb-2">{{ include.item.summary }}</p>
+    {% endif %}
+
+    {% if include.item.tags and include.item.tags.size > 0 %}
+    <div class="mt-2">
+        {% for tag in include.item.tags %}
+        <span class="badge badge-secondary">{{ tag }}</span>
+        {% endfor %}
+    </div>
+    {% endif %}
+
+    {% if include.item.links %}
+    <div class="mt-2">
+        {% for link in include.item.links %}
+        <a class="pr-3" target="_blank" rel="noopener noreferrer" href="{{ link[1] }}">{{ link[0] }}</a>
+        {% endfor %}
+    </div>
+    {% endif %}
+</div>
