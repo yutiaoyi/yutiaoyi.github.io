@@ -16,6 +16,9 @@
                                     <div class="media-body">
                                         <div>{{ item.name }}</div>
                                         <div class="small">{{ item.position }}</div>
+                                        {% if item.advisor %}
+                                        <div class="small text-muted">Advisor: {{ item.advisor }}</div>
+                                        {% endif %}
                                         <div class="small text-muted"><em>{{ item.date }}</em></div>
                                     </div>
                                 </li>

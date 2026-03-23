@@ -26,9 +26,11 @@ portrait_url: /assets/images/photos/portrait.jpg
 education:
 - name: The Hong Kong University of Science and Technology (Guangzhou)
   position: MPhil in Artificial Intelligence
+  advisor: Prof. Zeyu Wang, Prof. Pan Hui
   date: Sep. 2024 - present
 - name: Xiamen University
   position: B.Eng. in Computer Science & B.Econ. in Economics
+  advisor: Prof. Zhonggui Chen
   date: Sep. 2020 - Jun. 2024
 
 experience:
