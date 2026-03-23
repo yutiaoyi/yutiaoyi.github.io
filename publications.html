@@ -1,32 +1,72 @@
----
-layout: default
-title : Publications
-navbar_title: Publications
-body_attr: >-
-  data-spy="scroll" data-target="#navbar-year" data-offset="100"
----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publications | Xue Liao</title>
+    <meta name="description" content="Publications by Xue Liao - Research papers in 3D Vision, Computer Graphics, and Generative Models.">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <a href="index.html" class="nav-name">Xue <span>Liao</span></a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="publications.html">Publications</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+        </ul>
+    </nav>
 
-{% assign pubs_by_year = site.publications | sort: "date" | reverse | group_by_exp: "item", "item.date | date: '%Y'" %}
-
-<div class="row">
-    <div class="col-12 col-lg-10">
-        {% for year in pubs_by_year %}
-        {% assign num_papers = year.items | size %}
-        <h2 class="pt-4" id="year-{{ year.name }}">{{ year.name }}</h2>
-        <div class="my-0 p-0 bg-white shadow-sm rounded-xl">
-            {% for item in year.items %}
-                {% include widgets/publication_item.html item=item hide_bottom_border=forloop.last first=forloop.first last=forloop.last %}
-            {% endfor %}
+    <!-- Publications Section -->
+    <section style="padding-top: 8rem;">
+        <div class="section-header">
+            <h2>Publications</h2>
+            <div class="line"></div>
         </div>
-        {% endfor %}
-    </div>
 
-    <div class="col-2 d-none d-lg-block">
-        <div id="navbar-year" class="nav nav-pills flex-column sticky-top" style="top: 80px">
-            {% for year in pubs_by_year %}
-            <a class="nav-link d-block" href="#year-{{ year.name }}">{{ year.name }}</a>
-            {% endfor %}
+        <div class="pub-list">
+            <!-- Paper 1 -->
+            <div class="pub-item">
+                <div class="pub-year">CVPR 2026</div>
+                <div class="pub-content">
+                    <h3>A Benchmark for Illumination-Robust 3D Reconstruction in UAV Scenarios</h3>
+                    <p class="authors"><strong>Xue Liao</strong>, Zeyu Wang, Pan Hui, et al.</p>
+                    <p class="venue">IEEE Transactions on Neural Networks and Learning Systems (TNNLS), 2025 <span class="tag">First Author</span></p>
+                </div>
+            </div>
+
+            <!-- Paper 2 -->
+            <div class="pub-item">
+                <div class="pub-year">ECCV 2026</div>
+                <div class="pub-content">
+                    <h3>Outdoor 3D Gaussian Splatting Reconstruction under Varying Illumination</h3>
+                    <p class="authors"><strong>Xue Liao</strong>, Zeyu Wang, et al.</p>
+                    <p class="venue">Submitted to ECCV 2026 <span class="tag">First Author</span></p>
+                </div>
+            </div>
+
+            <!-- Paper 3 -->
+            <div class="pub-item">
+                <div class="pub-year">Manuscript</div>
+                <div class="pub-content">
+                    <h3>2D Layered Image Generation and Relighting</h3>
+                    <p class="authors"><strong>Xue Liao</strong>, et al.</p>
+                    <p class="venue">Manuscript in preparation</p>
+                </div>
+            </div>
         </div>
-    </div>
+    </section>
 
-</div>
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Xue Liao. All rights reserved.</p>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
