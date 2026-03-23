@@ -1,226 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Xue Liao | AI & Computer Graphics Researcher</title>
-    <meta name="description" content="Xue Liao - MPhil at HKUST(GZ), research interests in 3D Vision, 3D Reconstruction, Computer Graphics, and Generative Models.">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-</head>
-<body>
-    <!-- Navigation -->
-    <nav>
-        <a href="./" class="nav-name">Xue <span>Liao</span></a>
-        <ul class="nav-links">
-            <li><a href="./">Home</a></li>
-            <li><a href="publications">Publications</a></li>
-            <li><a href="projects">Projects</a></li>
-            <li><a href="portfolio">Portfolio</a></li>
-        </ul>
-    </nav>
+---
+layout: default
+title : Home
+navbar_title: Home
+---
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <div class="hero-photo">
-                <img src="assets/images/photo.jpg" alt="Xue Liao">
-            </div>
-            <div class="hero-text">
-                <h1>Hi, I'm <span>Xue Liao</span></h1>
-                <p class="subtitle">MPhil at HKUST (Guangzhou)</p>
-                <p class="description">
-                    I'm a researcher specializing in <strong>3D Vision</strong>,
-                    <strong>3D Reconstruction</strong>, <strong>Computer Graphics</strong>,
-                    and <strong>Generative Models</strong>. Currently pursuing my MPhil
-                    at HKUST(GZ), advised by Prof. Zeyu Wang and Prof. Pan Hui.
-                </p>
-                <div class="hero-links">
-                    <a href="publications" class="hero-link primary">Publications</a>
-                    <a href="projects" class="hero-link">Projects</a>
-                    <a href="https://github.com/yutiaoyi" target="_blank" class="hero-link">GitHub</a>
-                    <a href="mailto:xliao819@connect.hkust-gz.edu.cn" class="hero-link">Contact</a>
-                </div>
-            </div>
-        </div>
-    </section>
+{% include widgets/profile_card.html %}
 
-    <!-- Timeline Section -->
-    <section id="timeline">
-        <div class="section-header">
-            <h2>Timeline</h2>
-            <div class="line"></div>
-        </div>
-        <div class="timeline">
-            <!-- Research Intern -->
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-content">
-                    <div class="timeline-period">Aug 2025 - Present</div>
-                    <h3>Research Intern</h3>
-                    <p class="timeline-location">Meituan, Shenzhen, China</p>
-                    <p class="timeline-desc">Led the integration and deployment of lighting-consistent 3DGS reconstruction algorithm for drone business, improving reconstruction quality under complex outdoor lighting conditions. Solved consistency challenges in large-scale tiled reconstruction.</p>
-                </div>
-            </div>
+{% if site.data.display.homepage.show_experience %}
+    {% include widgets/experience_card.html %}
+{% endif %}
 
-            <!-- MPhil -->
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-content">
-                    <div class="timeline-period">Sep 2024 - Present</div>
-                    <h3>MPhil in Artificial Intelligence</h3>
-                    <p class="timeline-location">The Hong Kong University of Science and Technology (Guangzhou)</p>
-                    <p class="timeline-desc">Advisors: Prof. Zeyu Wang, Prof. Pan Hui</p>
-                    <p class="timeline-desc">Courses: Computer Vision, Reinforcement Learning, Assistive Technology Design, Computational Techniques for Sketch-based Creativity</p>
-                </div>
-            </div>
+{% if site.data.display.homepage.show_news %}
+    {% assign count_news = site.news | size %}
+    {% if count_news > 0 %}
+        {% include widgets/news_card.html limit=site.data.display.homepage.num_news %}
+    {% endif %}
+{% endif %}
 
-            <!-- Undergraduate -->
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-content">
-                    <div class="timeline-period">Sep 2020 - Jun 2024</div>
-                    <h3>B.Eng. in Computer Science & B.Econ. in Economics</h3>
-                    <p class="timeline-location">Xiamen University</p>
-                    <p class="timeline-desc">Advisor: Prof. Zhonggui Chen</p>
-                    <p class="timeline-desc">Courses: Computer Graphics, Machine Learning, Linear Algebra, Data Structure, Microeconomics</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Research Interests -->
-    <section id="interests">
-        <div class="section-header">
-            <h2>Research Interests</h2>
-            <div class="line"></div>
-        </div>
-        <div class="projects-grid">
-            <div class="project-card">
-                <div class="project-header"></div>
-                <div class="project-body">
-                    <h3>3D Vision</h3>
-                    <p>Understanding and reconstructing 3D scenes from images and videos.</p>
-                </div>
-            </div>
-            <div class="project-card">
-                <div class="project-header"></div>
-                <div class="project-body">
-                    <h3>3D Reconstruction</h3>
-                    <p>Developing algorithms for robust 3D reconstruction under various conditions.</p>
-                </div>
-            </div>
-            <div class="project-card">
-                <div class="project-header"></div>
-                <div class="project-body">
-                    <h3>Computer Graphics</h3>
-                    <p>Realistic rendering, procedural modeling, and appearance simulation.</p>
-                </div>
-            </div>
-            <div class="project-card">
-                <div class="project-header"></div>
-                <div class="project-body">
-                    <h3>Generative Models</h3>
-                    <p>Diffusion models, generative AI, and content creation.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills">
-        <div class="section-header">
-            <h2>Technical Skills</h2>
-            <div class="line"></div>
-        </div>
-        <div class="skills-grid">
-            <div class="skill-category">
-                <h3>Programming</h3>
-                <div class="skill-tags">
-                    <span class="skill-tag">Python</span>
-                    <span class="skill-tag">C++</span>
-                    <span class="skill-tag">C#</span>
-                    <span class="skill-tag">CUDA</span>
-                    <span class="skill-tag">SQL</span>
-                    <span class="skill-tag">Matlab</span>
-                </div>
-            </div>
-            <div class="skill-category">
-                <h3>AI & Graphics</h3>
-                <div class="skill-tags">
-                    <span class="skill-tag">PyTorch</span>
-                    <span class="skill-tag">3DGS</span>
-                    <span class="skill-tag">NeRF</span>
-                    <span class="skill-tag">OpenGL</span>
-                    <span class="skill-tag">Diffusion Models</span>
-                </div>
-            </div>
-            <div class="skill-category">
-                <h3>Tools</h3>
-                <div class="skill-tags">
-                    <span class="skill-tag">Git/GitHub</span>
-                    <span class="skill-tag">Unity</span>
-                    <span class="skill-tag">Blender</span>
-                    <span class="skill-tag">ComfyUI</span>
-                    <span class="skill-tag">Docker</span>
-                </div>
-            </div>
-            <div class="skill-category">
-                <h3>Languages</h3>
-                <div class="skill-tags">
-                    <span class="skill-tag">Mandarin (Native)</span>
-                    <span class="skill-tag">English (IELTS 6.5)</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Honors Section -->
-    <section id="honors">
-        <div class="section-header">
-            <h2>Honors & Awards</h2>
-            <div class="line"></div>
-        </div>
-        <div class="projects-grid">
-            <div class="project-card">
-                <div class="project-header"></div>
-                <div class="project-body">
-                    <h3>Academic Innovation Scholarship</h3>
-                    <p>Xiamen University, 2024</p>
-                </div>
-            </div>
-            <div class="project-card">
-                <div class="project-header"></div>
-                <div class="project-body">
-                    <h3>First-Class Academic Scholarship</h3>
-                    <p>Xiamen University, 2024</p>
-                </div>
-            </div>
-            <div class="project-card">
-                <div class="project-header"></div>
-                <div class="project-body">
-                    <h3>Honorable Mention</h3>
-                    <p>MCM/ICM, 2022</p>
-                </div>
-            </div>
-            <div class="project-card">
-                <div class="project-header"></div>
-                <div class="project-body">
-                    <h3>Third Prize (Fujian Division)</h3>
-                    <p>Blue Bridge Cup, 2023</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2026 Xue Liao. All rights reserved.</p>
-        <p>Built with passion for research and creativity.</p>
-    </footer>
-
-    <script src="assets/js/main.js"></script>
-</body>
-</html>
+{% if site.data.display.homepage.show_selected_publications %}
+    {% assign pubs = site.publications | sort: "date" | reverse | where: "selected", true %}
+    {% if pubs.size > 0 %}
+    {% include widgets/publication_card.html publications=pubs title='<i class="fas fa-star"></i> Selected Publications' %}
+    {% endif %}
+{% endif %}
