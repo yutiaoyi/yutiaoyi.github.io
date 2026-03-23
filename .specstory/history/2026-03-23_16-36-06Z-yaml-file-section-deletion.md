@@ -994,3 +994,175 @@ _**Agent (default)**_
 _**User**_
 
 现在我的这个图标是这样的效果吗？
+
+---
+
+_**Agent (default)**_
+
+是的，按我现在给你加的实现，效果就是你截图这种：  
+在联系方式区域最上面会出现一行 **地图图标 + 地点文字**（例如 `Hong Kong`），后面是 Email / LinkedIn / GitHub / Google Scholar。
+
+如果你想再贴近这个截图，我可以继续微调两点：
+
+- 图标样式：`fa-map-marker-alt` 改成 `fa-location-dot`（更现代一点）
+- 间距：让每一行的上下间距更统一，视觉更整齐
+
+你要的话我可以直接帮你改。
+
+---
+
+_**User**_
+
+现在的结果是这样的，我希望邮箱和 GitHub 也统一。
+
+---
+
+_**Agent (default)**_
+
+明白，你现在这个 mini 卡片里邮箱是“完整地址”、GitHub 是“纯图标”，视觉不统一。  
+我直接把它改成统一的“图标 + 文本标签”样式（至少 Email 和 GitHub），和你想要的风格一致。
+
+_**Agent (default)**_
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2">
+
+<details><summary>Tool use: **edit_file_v2** • Edit file: /Users/yutiaoyi/developer/temp_yutiaoyi_github_io/_includes/widgets/profile_card_mini.html</summary>
+
+</details>
+
+</tool-use>
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2"><details>
+<summary>Tool use: **edit_file_v2**</summary>
+
+</details></tool-use>
+
+_**Agent (default)**_
+
+<tool-use data-tool-type="unknown" data-tool-name="read_lints">
+<details>
+<summary>Tool use: **read_lints**</summary>
+
+
+Parameters:
+
+```json
+{
+  "paths": [
+    "/Users/yutiaoyi/developer/temp_yutiaoyi_github_io/_includes/widgets/profile_card_mini.html"
+  ]
+}
+```
+Result:
+
+```json
+{
+  "linterErrorsByFile": [
+    {
+      "relativeWorkspacePath": "/Users/yutiaoyi/developer/temp_yutiaoyi_github_io/_includes/widgets/profile_card_mini.html"
+    }
+  ]
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+<tool-use data-tool-type="unknown" data-tool-name="read_lints"><details>
+<summary>Tool use: **read_lints**</summary>
+
+</details></tool-use>
+
+_**Agent (default)**_
+
+已帮你改成统一风格了：`_includes/widgets/profile_card_mini.html` 现在是同一种样式展示联系方式。
+
+现在效果会变成：
+
+- `📍 Location`
+- `@ Email`（显示为 `Email` 标签，不再显示超长邮箱地址）
+- `GitHub`（不再是纯图标）
+- 其他平台（Scholar / LinkedIn / Twitter / ORCID / WeChat）也统一为“图标 + 文本”
+
+这样就不会再出现“邮箱一长串 + GitHub 只有图标”的割裂感。
+
+如果你想保留邮箱地址本身（比如 `xliao819(at)...`）但仍统一，我也可以改成：
+- `@ xliao819(at)...`（并强制不换行）  
+你选哪种我再帮你微调。
+
+---
+
+_**User**_
+
+我希望还是显示邮箱本身
+
+---
+
+_**Agent (default)**_
+
+明白，我把 `Email` 标签改回显示真实邮箱文本，同时保持整体“图标 + 文本”的统一样式。
+
+_**Agent (default)**_
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2">
+
+<details><summary>Tool use: **edit_file_v2** • Edit file: /Users/yutiaoyi/developer/temp_yutiaoyi_github_io/_includes/widgets/profile_card_mini.html</summary>
+
+</details>
+
+</tool-use>
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2"><details>
+<summary>Tool use: **edit_file_v2**</summary>
+
+</details></tool-use>
+
+_**Agent (default)**_
+
+<tool-use data-tool-type="unknown" data-tool-name="read_lints">
+<details>
+<summary>Tool use: **read_lints**</summary>
+
+
+Parameters:
+
+```json
+{
+  "paths": [
+    "/Users/yutiaoyi/developer/temp_yutiaoyi_github_io/_includes/widgets/profile_card_mini.html"
+  ]
+}
+```
+Result:
+
+```json
+{
+  "linterErrorsByFile": [
+    {
+      "relativeWorkspacePath": "/Users/yutiaoyi/developer/temp_yutiaoyi_github_io/_includes/widgets/profile_card_mini.html"
+    }
+  ]
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+<tool-use data-tool-type="unknown" data-tool-name="read_lints"><details>
+<summary>Tool use: **read_lints**</summary>
+
+</details></tool-use>
+
+_**Agent (default)**_
+
+已改好，现在会显示邮箱本身，同时保留统一样式：
+
+- `@ xliao819(at)connect.hkust-gz.edu.cn`
+- 仍然可点击跳转邮件客户端
+- GitHub 等仍是“图标 + 文本”风格统一
+
+改动文件：`_includes/widgets/profile_card_mini.html`。

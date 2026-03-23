@@ -23,6 +23,8 @@ short_bio: >-
     <a href="https://cislab.hkust-gz.edu.cn/members/zeyu-wang/" target="_blank" rel="noopener noreferrer">Prof. Zeyu Wang</a>
     and
     <a href="https://panhui.people.ust.hk/" target="_blank" rel="noopener noreferrer">Prof. Pan Hui</a>.
+  </p>
+  <p>
     My current work primarily focuses on <strong>3D Gaussian Splatting</strong>,
     <strong>inverse rendering</strong>, <strong>relighting</strong>, and <strong>image generation
     and editing</strong>. I am also interested in <strong>visualization</strong>, <strong>video generation</strong>,
