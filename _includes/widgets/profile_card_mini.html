@@ -37,7 +37,12 @@
                 {% if site.data.profile.location %}
                 <div class="row small mt-2">
                     <div class="col-10 mx-auto text-left">
-                        <span class="no-break"><i class="fas fa-map-marker-alt"></i> {{ site.data.profile.location }}</span>
+                        <span class="d-flex align-items-start">
+                            <span class="mr-2 text-center" style="width: 1.25em; flex: 0 0 1.25em;">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </span>
+                            <span>{{ site.data.profile.location }}</span>
+                        </span>
                     </div>
                 </div>
                 {% endif %}
@@ -46,7 +51,9 @@
                 <div class="row small mt-2">
                     <div class="col-10 mx-auto text-left">
                         <a class="email-text d-flex align-items-start" href="mailto:{{ site.data.profile.email | encode_email }}">
-                            <i class="fas fa-envelope mr-2 mt-1" style="flex: 0 0 auto;"></i>
+                            <span class="mr-2 text-center mt-1" style="width: 1.25em; flex: 0 0 1.25em;">
+                                <i class="fas fa-envelope"></i>
+                            </span>
                             <span style="min-width: 0; overflow-wrap: anywhere;">{{ site.data.profile.email | replace: "@", "(at)" }}</span>
                         </a>
                     </div>
@@ -56,8 +63,11 @@
                 {% if site.data.profile.github %}
                 <div class="row small mt-2">
                     <div class="col-10 mx-auto text-left">
-                        <a class="no-break" target="_blank" href="https://github.com/{{ site.data.profile.github }}">
-                            <i class="fab fa-github"></i> GitHub
+                        <a class="d-flex align-items-start" target="_blank" href="https://github.com/{{ site.data.profile.github }}">
+                            <span class="mr-2 text-center" style="width: 1.25em; flex: 0 0 1.25em;">
+                                <i class="fab fa-github"></i>
+                            </span>
+                            <span>GitHub</span>
                         </a>
                     </div>
                 </div>
