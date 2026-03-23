@@ -1352,3 +1352,102 @@ Status: **completed**
 <summary>Tool use: **read_lints**</summary>
 
 </details></tool-use>
+
+_**Agent (default)**_
+
+你这个判断非常对，我已经做了两处关键调整来修这个“歪 + 换行怪”：
+
+- 联系方式每一行改成同一内容宽度：`col-10 mx-auto text-left`  
+  - 这样是“整体居中、内部左对齐”，不再偏一边。
+- 邮箱改成“图标固定 + 文本单独换行”：
+  - 用 `d-flex` 固定 `@` 图标在左边；
+  - 邮箱文本放在 `span` 里自动换行，不会再出现图标单独占一行的奇怪效果。
+
+改动文件：`_includes/widgets/profile_card_mini.html`。  
+你刷新后应该会明显顺眼很多。
+
+如果你还想更工整，我可以再加一步：让 `location / email / github` 三行图标起始位置严格对齐（视觉上像同一列）。
+
+---
+
+_**User**_
+
+这个 @ 和我的邮箱之间可以不要换行吗？然后那个 @ 可不可以把它变成邮件的图标呢？
+
+---
+
+_**Agent (default)**_
+
+可以，我把邮箱这一行改成：**邮件图标 + 邮箱文本同一行起始**，并保持长邮箱自动换行；同时把 `@` 图标换成信封图标。
+
+_**Agent (default)**_
+
+<tool-use data-tool-type="unknown" data-tool-name="ripgrep_raw_search">
+<details>
+<summary>Tool use: **ripgrep_raw_search**</summary>
+
+
+Parameters:
+
+```json
+{
+  "caseInsensitive": false,
+  "outputMode": "content",
+  "path": "/Users/yutiaoyi/developer/temp_yutiaoyi_github_io/assets/css",
+  "pattern": "email-text"
+}
+```
+Additional data:
+
+```json
+{
+  "isPruned": true,
+  "outputMode": "content",
+  "path": "/Users/yutiaoyi/developer/temp_yutiaoyi_github_io/assets/css",
+  "pattern": "email-text",
+  "topFiles": [
+    {
+      "matchCount": 1,
+      "uri": "assets/css/global.css"
+    }
+  ],
+  "totalFiles": 1,
+  "totalMatches": 1
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+<tool-use data-tool-type="unknown" data-tool-name="ripgrep_raw_search"><details>
+<summary>Tool use: **ripgrep_raw_search**</summary>
+
+</details></tool-use>
+
+_**Agent (default)**_
+
+<tool-use data-tool-type="read" data-tool-name="read_file_v2">
+<details><summary>Tool use: **read_file_v2** • Read file: /Users/yutiaoyi/developer/temp_yutiaoyi_github_io/_includes/widgets/profile_card_mini.html</summary>
+
+</details>
+</tool-use>
+
+<tool-use data-tool-type="read" data-tool-name="read_file_v2"><details>
+<summary>Tool use: **read_file_v2**</summary>
+
+</details></tool-use>
+
+_**Agent (default)**_
+
+<tool-use data-tool-type="read" data-tool-name="read_file_v2">
+<details><summary>Tool use: **read_file_v2** • Read file: /Users/yutiaoyi/developer/temp_yutiaoyi_github_io/assets/css/global.css</summary>
+
+</details>
+</tool-use>
+
+<tool-use data-tool-type="read" data-tool-name="read_file_v2"><details>
+<summary>Tool use: **read_file_v2**</summary>
+
+</details></tool-use>

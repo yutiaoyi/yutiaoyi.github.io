@@ -46,8 +46,8 @@
                 <div class="row small mt-2">
                     <div class="col-10 mx-auto text-left">
                         <a class="email-text d-flex align-items-start" href="mailto:{{ site.data.profile.email | encode_email }}">
-                            <i class="fas fa-at mr-2 mt-1"></i>
-                            <span style="overflow-wrap: anywhere;">{{ site.data.profile.email | replace: "@", "(at)" }}</span>
+                            <i class="fas fa-envelope mr-2 mt-1" style="flex: 0 0 auto;"></i>
+                            <span style="min-width: 0; overflow-wrap: anywhere;">{{ site.data.profile.email | replace: "@", "(at)" }}</span>
                         </a>
                     </div>
                 </div>
