@@ -35,6 +35,14 @@
                 </div>
 
                 <div class="row small">
+                    {% if site.data.profile.location %}
+                    <div class="col text-center">
+                        <i class="fas fa-map-marker-alt"></i> {{ site.data.profile.location }}
+                    </div>
+                    {% endif %}
+                </div>
+
+                <div class="row small">
                     <div class="col text-center">
                         <a class="email-text" href="mailto:{{ site.data.profile.email | encode_email }}">
                             {{ site.data.profile.email | replace: "@", "(at)" }}

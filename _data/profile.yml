@@ -7,18 +7,26 @@ positions:
 - name: HKUST (Guangzhou)
 
 email: "xliao819@connect.hkust-gz.edu.cn"
+location: "Guangzhou, China"
 github: "yutiaoyi"
 
 short_bio_text_justify: false
 short_bio: >-
   <p>
-    Hi, I'm Xue Liao.
+    Hi! I'm Xue Liao.
   </p>
   <p>
     I'm a researcher specializing in <strong>3D Vision</strong>,
     <strong>3D Reconstruction</strong>, <strong>Computer Graphics</strong>,
-    and <strong>Generative Models</strong>. Currently pursuing my MPhil
-    at HKUST(GZ), advised by Prof. Zeyu Wang and Prof. Pan Hui.
+    and <strong>Generative Models</strong>. I am currently pursuing my MPhil
+    at HKUST (GZ) under the supervision of
+    <a href="https://cislab.hkust-gz.edu.cn/members/zeyu-wang/" target="_blank" rel="noopener noreferrer">Prof. Zeyu Wang</a>
+    and
+    <a href="https://panhui.people.ust.hk/" target="_blank" rel="noopener noreferrer">Prof. Pan Hui</a>.
+    My current work primarily focuses on <strong>3D Gaussian Splatting</strong>,
+    <strong>inverse rendering</strong>, <strong>relighting</strong>, and <strong>image generation
+    and editing</strong>. I am also interested in <strong>visualization</strong>, <strong>video generation</strong>,
+    and <strong>world models</strong>.
   </p>
   <p>
     I'll be joining the University of Notre Dame as a PhD student in Fall 2026. See you there!
