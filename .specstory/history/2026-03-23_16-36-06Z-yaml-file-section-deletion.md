@@ -1166,3 +1166,120 @@ _**Agent (default)**_
 - GitHub 等仍是“图标 + 文本”风格统一
 
 改动文件：`_includes/widgets/profile_card_mini.html`。
+
+---
+
+_**User**_
+
+@.specstory 这个文件夹是干嘛的？它是我这个项目里面有用的信息吗？还是说，它是我这个 Cursor 的一个插件自动生成的？
+
+---
+
+_**Agent (default)**_
+
+`@.specstory` 基本上不是你网站项目本身需要的内容，通常是工具（如 Cursor/相关扩展）自动生成的会话或操作记录目录。  
+从你当前仓库状态看它还是未追踪文件（`?? .specstory/...`），也说明它不是模板必需文件。
+
+可以这样理解：
+
+- **对你这个学术主页运行**：一般没用，不影响 Jekyll 构建和页面展示。
+- **对编辑器/插件**：可能有用，用来保存对话、历史、配置快照之类。
+- **是否提交到 GitHub**：通常**不建议提交**。
+
+你可以把它加进 `.gitignore`，例如：
+
+```gitignore
+.specstory/
+```
+
+如果你愿意，我可以直接帮你把 `.specstory/` 加到项目的 `.gitignore`。
+
+---
+
+_**User**_
+
+现在是这样的，我希望它是靠左对齐。并且我这个邮箱太长了，可以把它分成两行吗？就让它自动换行，并且保持靠左对齐。
+
+---
+
+_**Agent (default)**_
+
+明白，我来把 mini 卡片的联系方式区改成左对齐，并让邮箱支持自动换行（长地址会自然分成两行），同时保持图标和文本排版整齐。
+
+_**Agent (default)**_
+
+<tool-use data-tool-type="read" data-tool-name="read_file_v2">
+<details><summary>Tool use: **read_file_v2** • Read file: /Users/yutiaoyi/developer/temp_yutiaoyi_github_io/_includes/widgets/profile_card_mini.html</summary>
+
+</details>
+</tool-use>
+
+<tool-use data-tool-type="read" data-tool-name="read_file_v2"><details>
+<summary>Tool use: **read_file_v2**</summary>
+
+</details></tool-use>
+
+_**Agent (default)**_
+
+我会只改联系方式这几行：位置/邮箱/GitHub 等统一左对齐；邮箱去掉 `no-break` 并加自动换行样式，这样超长地址会自动分成两行。
+
+_**Agent (default)**_
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2">
+
+<details><summary>Tool use: **edit_file_v2** • Edit file: /Users/yutiaoyi/developer/temp_yutiaoyi_github_io/_includes/widgets/profile_card_mini.html</summary>
+
+</details>
+
+</tool-use>
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2"><details>
+<summary>Tool use: **edit_file_v2**</summary>
+
+</details></tool-use>
+
+_**Agent (default)**_
+
+<tool-use data-tool-type="unknown" data-tool-name="read_lints">
+<details>
+<summary>Tool use: **read_lints**</summary>
+
+
+Parameters:
+
+```json
+{
+  "paths": [
+    "/Users/yutiaoyi/developer/temp_yutiaoyi_github_io/_includes/widgets/profile_card_mini.html"
+  ]
+}
+```
+Result:
+
+```json
+{
+  "linterErrorsByFile": [
+    {
+      "relativeWorkspacePath": "/Users/yutiaoyi/developer/temp_yutiaoyi_github_io/_includes/widgets/profile_card_mini.html"
+    }
+  ]
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+<tool-use data-tool-type="unknown" data-tool-name="read_lints"><details>
+<summary>Tool use: **read_lints**</summary>
+
+</details></tool-use>
+
+_**Agent (default)**_
+
+已经按你的要求改好了（`_includes/widgets/profile_card_mini.html`）：
+
+- 联系方式区域改为**靠左对齐**
+- 邮箱去掉了不换行限制，现在会**自动换行**（长地址可分成两行）
+- 同时保持了图标 + 文本样式统一（Location / Email
