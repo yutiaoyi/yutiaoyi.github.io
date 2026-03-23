@@ -36,7 +36,7 @@
 
                 {% if site.data.profile.location %}
                 <div class="row small mt-2">
-                    <div class="col text-left">
+                    <div class="col-10 mx-auto text-left">
                         <span class="no-break"><i class="fas fa-map-marker-alt"></i> {{ site.data.profile.location }}</span>
                     </div>
                 </div>
@@ -44,9 +44,10 @@
 
                 {% if site.data.profile.email %}
                 <div class="row small mt-2">
-                    <div class="col text-left">
-                        <a class="email-text d-inline-block" style="overflow-wrap: anywhere; word-break: break-word;" href="mailto:{{ site.data.profile.email | encode_email }}">
-                            <i class="fas fa-at"></i> {{ site.data.profile.email | replace: "@", "(at)" }}
+                    <div class="col-10 mx-auto text-left">
+                        <a class="email-text d-flex align-items-start" href="mailto:{{ site.data.profile.email | encode_email }}">
+                            <i class="fas fa-at mr-2 mt-1"></i>
+                            <span style="overflow-wrap: anywhere;">{{ site.data.profile.email | replace: "@", "(at)" }}</span>
                         </a>
                     </div>
                 </div>
@@ -54,7 +55,7 @@
 
                 {% if site.data.profile.github %}
                 <div class="row small mt-2">
-                    <div class="col text-left">
+                    <div class="col-10 mx-auto text-left">
                         <a class="no-break" target="_blank" href="https://github.com/{{ site.data.profile.github }}">
                             <i class="fab fa-github"></i> GitHub
                         </a>
@@ -69,7 +70,7 @@
                 {%- assign gscholar_url = 'https://scholar.google.com/citations?user=' | append: site.data.profile.gscholar -%}
                 {%- endif -%}
                 <div class="row small mt-2">
-                    <div class="col text-left">
+                    <div class="col-10 mx-auto text-left">
                         <a class="no-break" target="_blank" href="{{ gscholar_url }}">
                             <i class="fab fa-google-scholar"></i> Google Scholar
                         </a>
@@ -79,7 +80,7 @@
 
                 {% if site.data.profile.linkedin %}
                 <div class="row small mt-2">
-                    <div class="col text-left">
+                    <div class="col-10 mx-auto text-left">
                         <a class="no-break" target="_blank" href="https://www.linkedin.com/in/{{ site.data.profile.linkedin }}">
                             <i class="fab fa-linkedin"></i> LinkedIn
                         </a>
@@ -89,7 +90,7 @@
 
                 {% if site.data.profile.twitter %}
                 <div class="row small mt-2">
-                    <div class="col text-left">
+                    <div class="col-10 mx-auto text-left">
                         <a class="no-break" target="_blank" href="https://twitter.com/{{ site.data.profile.twitter }}">
                             <i class="fab fa-twitter"></i> Twitter
                         </a>
@@ -99,7 +100,7 @@
 
                 {% if site.data.profile.orcid %}
                 <div class="row small mt-2">
-                    <div class="col text-left">
+                    <div class="col-10 mx-auto text-left">
                         <a class="no-break" target="_blank" href="https://orcid.org/{{ site.data.profile.orcid }}">
                             <i class="fab fa-orcid"></i> ORCID
                         </a>
@@ -109,7 +110,7 @@
 
                 {% if site.data.profile.wechat_qrcode %}
                 <div class="row small mt-2">
-                    <div class="col text-left">
+                    <div class="col-10 mx-auto text-left">
                         <a class="no-break" data-toggle="modal" data-target="#modal-wechat">
                             <i class="fab fa-weixin"></i> WeChat
                         </a>
