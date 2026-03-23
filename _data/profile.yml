@@ -12,6 +12,9 @@ github: "yutiaoyi"
 short_bio_text_justify: false
 short_bio: >-
   <p>
+    Hi, I'm Xue Liao.
+  </p>
+  <p>
     I'm a researcher specializing in <strong>3D Vision</strong>,
     <strong>3D Reconstruction</strong>, <strong>Computer Graphics</strong>,
     and <strong>Generative Models</strong>. Currently pursuing my MPhil
@@ -38,7 +41,7 @@ awards:
   date: 2024
 - name: First-Class Academic Scholarship, Xiamen University
   date: 2024
-- name: Honorable Mention, MCM/ICM
-  date: 2022
 - name: Third Prize (Fujian Division), Blue Bridge Cup
   date: 2023
+- name: Honorable Mention, MCM/ICM
+  date: 2022
