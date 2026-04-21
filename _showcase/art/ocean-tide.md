@@ -6,6 +6,14 @@ group: Digital Art
 ---
 
 <div class="p-4">
+  <a href="{{ '/showcase/ocean-tide/' | relative_url }}" class="d-block mb-3">
+    <img
+      src="{{ '/showcase/ocean-tide/cover.png' | relative_url }}"
+      alt="Interactive Ocean Tide cover"
+      class="img-fluid rounded-xl"
+      loading="lazy"
+    >
+  </a>
   <h3 class="mb-2">Interactive Ocean Tide</h3>
   <p class="text-muted mb-3">p5.js 交互式海潮叙事实验（可开关交互）。</p>
   <a class="btn btn-sm btn-outline-primary" href="{{ '/showcase/ocean-tide/' | relative_url }}">
