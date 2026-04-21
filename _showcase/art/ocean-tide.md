@@ -15,7 +15,6 @@ group: Digital Art
     >
   </a>
   <h3 class="mb-2">Interactive Ocean Tide</h3>
-  <p class="text-muted mb-3">p5.js 交互式海潮叙事实验（可开关交互）。</p>
   <a class="btn btn-sm btn-outline-primary" href="{{ '/showcase/ocean-tide/' | relative_url }}">
     打开作品
   </a>
