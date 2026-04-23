@@ -15,7 +15,7 @@ group: Digital Art
     >
   </a>
   <h3 class="mb-2">Wandering Bird</h3>
-  <p class="mb-3 text-muted">Vintage ink-on-paper ripple exploration.</p>
+  <p class="mb-3 text-muted">Wandering Bird, Wandering Person.</p>
   <a class="btn btn-sm btn-outline-primary" href="{{ '/showcase/wandering-bird/' | relative_url }}">
     Open
   </a>

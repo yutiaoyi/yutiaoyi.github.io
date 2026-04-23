@@ -16,7 +16,7 @@ group: Digital Art
   </a>
   <h3 class="mb-2">Interactive Ocean Tide</h3>
   <a class="btn btn-sm btn-outline-primary" href="{{ '/showcase/ocean-tide/' | relative_url }}">
-    打开作品
+    Open
   </a>
 </div>
 
