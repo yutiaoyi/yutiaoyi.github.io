@@ -7,8 +7,30 @@ container_class: container-xl
 
 {% assign cards_by_group = site.showcase | sort: "date" | reverse | where: "show", true | group_by_exp: "item", "item.group" %}
 
+<link rel="stylesheet" href="{{ '/assets/css/showcase.css' | relative_url }}">
+<script defer src="{{ '/assets/js/showcase_ripples.js' | relative_url }}"></script>
+
+<div class="showcase-root" id="showcase-root">
+  <header class="showcase-hero">
+    <div class="showcase-hero__bg" aria-hidden="true">
+      <canvas class="showcase-ripple-canvas" data-showcase-ripple-canvas></canvas>
+    </div>
+    <div class="showcase-hero__inner">
+      <p class="showcase-hero__kicker">Interactive work archive</p>
+      <h1 class="showcase-hero__title">Showcase</h1>
+      <p class="showcase-hero__subtitle">
+        A gallery of small worlds. Click to enter.
+      </p>
+      <nav class="showcase-group-nav" aria-label="Showcase groups" data-showcase-group-nav></nav>
+    </div>
+  </header>
+
 {% for group in cards_by_group %}
-<h1>{{ group.name }}</h1>
+<section class="showcase-group" data-showcase-group>
+  <header class="showcase-group__header">
+    <h2 class="showcase-group__title" id="group-{{ group.name | slugify }}">{{ group.name }}</h2>
+    <div class="showcase-group__ripple" aria-hidden="true"></div>
+  </header>
 <div class="row grid mb-4">
     <div class="grid-sizer col-1"></div>
     {% for item in group.items %}
@@ -23,10 +45,14 @@ container_class: container-xl
         {%- assign width_xs = item.width | times: 2 | at_most: 12 -%}
     {%- endif -%}
     <div class="p-2 grid-item col-md-{{ item.width | at_most: 12 }} col-sm-{{ width_sm }} col-{{ width_xs }}">
-        <div class="{% if item.class != null %}{{ item.class }}{% else %}card border-0 shadow-sm bg-white{% endif %}">
+        <div class="showcase-card {% if item.class != null %}{{ item.class }}{% else %}card border-0 shadow-sm bg-white{% endif %}">
             {{ item.content }}
         </div>
     </div>
     {% endfor %}
 </div>
+<div class="showcase-group__tail" aria-hidden="true"></div>
+</section>
 {% endfor %}
+
+</div>
