@@ -294,8 +294,8 @@
 .photo-root .series-wall {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 0;
-  padding: 0;
+  gap: clamp(22px, 3.2vw, 54px);
+  padding: clamp(18px, 3vw, 42px);
 }
 
 .photo-root .shot {
@@ -384,9 +384,7 @@
   line-height: 1.65;
 }
 
-.photo-root .shot + .shot {
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
-}
+/* Intentionally no separator lines between shots */
 
 @media (max-width: 900px) {
   .photo-root .shot {
