@@ -9,8 +9,6 @@
     for (const shot of shots) {
       if (shot !== except) {
         shot.dataset.open = "false";
-        const btn = shot.querySelector("[data-shot-toggle]");
-        if (btn) btn.setAttribute("aria-expanded", "false");
       }
     }
   }
@@ -18,24 +16,16 @@
   for (const shot of shots) {
     shot.dataset.open = "false";
 
-    const btn = shot.querySelector("[data-shot-toggle]");
-    if (!btn) continue;
+    const media = shot.querySelector(".shot__media");
+    if (!media) continue;
 
-    btn.addEventListener("click", (e) => {
+    media.addEventListener("click", (e) => {
       e.preventDefault();
       e.stopPropagation();
 
       const next = shot.dataset.open !== "true";
       closeAll(next ? shot : undefined);
       shot.dataset.open = next ? "true" : "false";
-      btn.setAttribute("aria-expanded", next ? "true" : "false");
-    });
-
-    shot.addEventListener("click", () => {
-      // Tap outside the caption area closes it.
-      if (shot.dataset.open === "true") {
-        closeAll(undefined);
-      }
     });
   }
 
