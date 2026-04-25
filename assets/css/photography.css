@@ -5,6 +5,9 @@
   Scope everything under `.photo-root` to avoid leaking styles site-wide.
 */
 
+/* Font: Special Elite (scoped to photography pages) */
+@import url("https://fonts.googleapis.com/css2?family=Special+Elite&display=swap");
+
 :root {
   --photo-bg: #050505;
   --photo-ink: rgba(255, 255, 255, 0.92);
@@ -23,6 +26,11 @@
   background: var(--photo-bg) !important;
 }
 
+.photo-body,
+.photo-body .photo-root {
+  font-family: "Special Elite", ui-monospace, Menlo, Monaco, Consolas, monospace;
+}
+
 .photo-body .container-xl,
 .photo-body .container-lg,
 .photo-body .container-md,
@@ -38,21 +46,52 @@
 
 .photo-body .navbar .navbar-brand,
 .photo-body .navbar .nav-link {
-  color: rgba(0, 0, 0, 0.82) !important;
+  color: rgba(255, 255, 255, 0.88) !important;
 }
 
 .photo-body .navbar .nav-link:hover {
-  color: rgba(0, 0, 0, 0.92) !important;
+  color: rgba(255, 255, 255, 0.96) !important;
 }
 
 .photo-body .navbar .nav-item.active .nav-link {
-  color: rgba(0, 0, 0, 0.92) !important;
+  color: rgba(255, 255, 255, 0.96) !important;
   text-decoration: underline;
   text-underline-offset: 6px;
 }
 
 .photo-body .navbar.shadow-sm {
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08) !important;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.22) !important;
+}
+
+.photo-body .navbar.bg-dark {
+  background: #000 !important;
+}
+
+.photo-body .navbar .navbar-toggler {
+  border-color: rgba(255, 255, 255, 0.22) !important;
+}
+
+.photo-body .navbar .navbar-toggler,
+.photo-body .navbar .navbar-toggler i {
+  color: rgba(255, 255, 255, 0.88) !important;
+}
+
+/* Footer: keep it quiet and dark on photo pages */
+.photo-body .footer.bg-white {
+  background: var(--photo-bg) !important;
+}
+
+.photo-body .footer.border-top {
+  border-top-color: rgba(255, 255, 255, 0.10) !important;
+}
+
+.photo-body .footer .text-muted,
+.photo-body .footer a {
+  color: rgba(255, 255, 255, 0.55) !important;
+}
+
+.photo-body .footer a:hover {
+  color: rgba(255, 255, 255, 0.72) !important;
 }
 
 .photo-root .photo-shell {
@@ -200,6 +239,15 @@
   box-shadow: 0 30px 90px rgba(0, 0, 0, 0.35);
 }
 
+/* Immersive mode: go full-bleed when container has no gutters */
+.photo-body .photo-shell,
+.photo-body .series-shell {
+  border-radius: 0;
+  border-left: none;
+  border-right: none;
+  box-shadow: none;
+}
+
 .photo-root .series-topbar {
   display: flex;
   align-items: baseline;
@@ -274,9 +322,9 @@
 
 .photo-root .shot__img {
   width: 100%;
-  height: auto;
+  height: min(82vh, 980px);
   display: block;
-  object-fit: cover;
+  object-fit: contain;
   background: #0b0b0b;
   filter: saturate(0.98) contrast(1.02);
 }
