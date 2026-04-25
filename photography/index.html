@@ -3,6 +3,7 @@ layout: default
 title : Photography
 navbar_title: Photography
 container_class: container-xl
+body_class: photo-body
 ---
 
 <link rel="stylesheet" href="{{ '/assets/css/photography.css' | relative_url }}">
@@ -41,14 +42,28 @@ container_class: container-xl
       </article>
 
       <article class="series-card">
-        <a href="#" aria-label="Placeholder series (coming soon)">
+        <a href="{{ '/photography/fantasy/' | relative_url }}" aria-label="Open Fantasy series">
           <div class="series-card__media" aria-hidden="true" style="background:
-            radial-gradient(1200px 520px at 70% 20%, rgba(255,255,255,0.06), transparent 60%),
+            radial-gradient(1200px 520px at 65% 20%, rgba(255,255,255,0.07), transparent 60%),
             linear-gradient(180deg, rgba(0,0,0,0.92), rgba(0,0,0,0.99));"></div>
           <div class="series-card__body">
-            <h2 class="series-card__title">Coming Soon</h2>
+            <h2 class="series-card__title">Fantasy</h2>
             <p class="series-card__desc">
-              Drop images into a new folder, add a series card, and it appears here.
+              A softer room: bright silhouettes and quiet color tension.
+            </p>
+          </div>
+        </a>
+      </article>
+
+      <article class="series-card">
+        <a href="{{ '/photography/hkust-gz/' | relative_url }}" aria-label="Open HKUST (GZ) series">
+          <div class="series-card__media" aria-hidden="true" style="background:
+            radial-gradient(1200px 520px at 40% 20%, rgba(255,255,255,0.06), transparent 62%),
+            linear-gradient(180deg, rgba(0,0,0,0.92), rgba(0,0,0,0.99));"></div>
+          <div class="series-card__body">
+            <h2 class="series-card__title">HKUST (GZ)</h2>
+            <p class="series-card__desc">
+              Architecture, light, and long corridors — a study in structure.
             </p>
           </div>
         </a>
