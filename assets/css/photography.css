@@ -9,7 +9,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Special+Elite&display=swap");
 
 :root {
-  --photo-bg: #050505;
+  --photo-bg: #000;
   --photo-ink: rgba(255, 255, 255, 0.92);
   --photo-ink-dim: rgba(255, 255, 255, 0.64);
   --photo-ink-faint: rgba(255, 255, 255, 0.42);
@@ -322,8 +322,8 @@
   height: min(82vh, 980px);
   display: block;
   object-fit: contain;
-  object-position: left center;
-  background: #0b0b0b;
+  object-position: center center;
+  background: #000;
   filter: saturate(0.98) contrast(1.02);
   border: 0 !important;
   border-radius: 0 !important;
