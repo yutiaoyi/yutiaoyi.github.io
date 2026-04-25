@@ -303,11 +303,18 @@
   grid-template-columns: minmax(0, 1fr) minmax(0, 420px);
   align-items: stretch;
   background: #000;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  overflow: visible !important;
 }
 
 .photo-root .shot__media {
   position: relative;
   background: #000;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
 }
 
 .photo-root .shot__img {
@@ -315,8 +322,12 @@
   height: min(82vh, 980px);
   display: block;
   object-fit: contain;
+  object-position: left center;
   background: #0b0b0b;
   filter: saturate(0.98) contrast(1.02);
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
 }
 
 .photo-root .shot__panel {
@@ -328,6 +339,13 @@
   opacity: 0;
   transform: translateX(-8px);
   transition: opacity 200ms ease, transform 200ms ease;
+  border: 0 !important;
+  border-radius: 0 !important;
+}
+
+.photo-root .shot__media:hover + .shot__panel {
+  opacity: 1;
+  transform: translateX(0);
 }
 
 .photo-root .shot:focus-within .shot__panel,
