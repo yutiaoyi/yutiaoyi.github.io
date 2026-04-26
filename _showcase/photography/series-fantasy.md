@@ -28,7 +28,7 @@ group: Photography
     </div>
   </a>
   <h3 class="mb-2">Fantasy</h3>
-  <p class="mb-3 text-muted">Softer light, quieter color tension.</p>
+  <p class="mb-3 text-muted">梦想，理想，幻想，狂想，妄想。</p>
   <a class="btn btn-sm btn-outline-primary" href="{{ '/showcase/photography/fantasy/' | relative_url }}">
     Open
   </a>
