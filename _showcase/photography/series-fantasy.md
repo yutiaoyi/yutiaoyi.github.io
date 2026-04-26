@@ -23,13 +23,16 @@ group: Photography
       <div style="position:absolute; inset:0; opacity:0.18; mix-blend-mode:screen; background:
         radial-gradient(circle at 30% 30%, rgba(255,255,255,0.10), transparent 55%),
         repeating-linear-gradient(0deg, rgba(255,255,255,0.08) 0px, rgba(255,255,255,0.08) 1px, transparent 1px, transparent 18px);"></div>
+      <div style="position:absolute; left:18px; top:16px; color: rgba(255,255,255,0.82); font-size:12px; letter-spacing:0.08em; text-transform:uppercase;">
+        Series
+      </div>
       <div style="position:absolute; left:18px; bottom:14px; color: rgba(255,255,255,0.92); font-size:14px; letter-spacing:0.04em;">
         Fantasy
       </div>
     </div>
   </a>
   <h3 class="mb-2">Fantasy</h3>
-  <p class="mb-3 text-muted">梦想，理想，幻想，狂想，妄想。</p>
+  <p class="mb-3 text-muted">{{ site.data.photography_series.fantasy.desc }}</p>
   <a class="btn btn-sm btn-outline-primary" href="{{ '/showcase/photography/fantasy/' | relative_url }}">
     Open
   </a>

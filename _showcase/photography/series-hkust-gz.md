@@ -31,7 +31,7 @@ group: Photography
     </div>
   </a>
   <h3 class="mb-2">HKUST (GZ)</h3>
-  <p class="mb-3 text-muted">人生第一卷。</p>
+  <p class="mb-3 text-muted">{{ site.data.photography_series.hkust_gz.desc }}</p>
   <a class="btn btn-sm btn-outline-primary" href="{{ '/showcase/photography/hkust-gz/' | relative_url }}">
     Open
   </a>
