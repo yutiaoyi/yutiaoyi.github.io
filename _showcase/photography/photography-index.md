@@ -11,7 +11,9 @@ group: Photography
       class="rounded-xl"
       style="
         aspect-ratio: 4 / 3;
-        background: radial-gradient(900px 520px at 15% 15%, rgba(255,255,255,0.10), transparent 55%),
+        background:
+          url('{{ '/showcase/photography/cover.jpg' | relative_url }}') center/cover no-repeat,
+          radial-gradient(900px 520px at 15% 15%, rgba(255,255,255,0.10), transparent 55%),
           radial-gradient(900px 520px at 80% 25%, rgba(255,255,255,0.06), transparent 60%),
           linear-gradient(180deg, rgba(0,0,0,0.92), rgba(0,0,0,0.98));
         border: 1px solid rgba(0,0,0,0.10);

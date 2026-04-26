@@ -12,6 +12,7 @@ group: Photography
       style="
         aspect-ratio: 4 / 3;
         background:
+          url('{{ '/showcase/photography/fantasy/cover.jpg' | relative_url }}') center/cover no-repeat,
           radial-gradient(1200px 520px at 70% 20%, rgba(255,255,255,0.08), transparent 60%),
           linear-gradient(180deg, rgba(0,0,0,0.92), rgba(0,0,0,0.99));
         border: 1px solid rgba(0,0,0,0.10);

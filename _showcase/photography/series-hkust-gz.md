@@ -12,6 +12,7 @@ group: Photography
       style="
         aspect-ratio: 4 / 3;
         background:
+          url('{{ '/showcase/photography/hkust-gz/cover.jpg' | relative_url }}') center/cover no-repeat,
           radial-gradient(1200px 520px at 35% 20%, rgba(255,255,255,0.07), transparent 62%),
           linear-gradient(180deg, rgba(0,0,0,0.92), rgba(0,0,0,0.99));
         border: 1px solid rgba(0,0,0,0.10);
