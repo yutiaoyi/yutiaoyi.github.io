@@ -6,7 +6,7 @@ group: Photography
 ---
 
 <div class="p-4">
-  <a href="{{ '/photography/fantasy/' | relative_url }}" class="d-block mb-3">
+  <a href="{{ '/showcase/photography/fantasy/' | relative_url }}" class="d-block mb-3">
     <div
       class="rounded-xl"
       style="
@@ -29,7 +29,7 @@ group: Photography
   </a>
   <h3 class="mb-2">Fantasy</h3>
   <p class="mb-3 text-muted">Softer light, quieter color tension.</p>
-  <a class="btn btn-sm btn-outline-primary" href="{{ '/photography/fantasy/' | relative_url }}">
+  <a class="btn btn-sm btn-outline-primary" href="{{ '/showcase/photography/fantasy/' | relative_url }}">
     Open
   </a>
 </div>

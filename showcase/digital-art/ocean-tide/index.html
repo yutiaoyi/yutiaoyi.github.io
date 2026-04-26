@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Ocean Tide - Deca Joins Narrative</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f2f0e9; /* 沙滩米白色 */
+            overflow: hidden;
+        }
+        canvas {
+            display: block;
+        }
+        /* 交互开关按钮样式 */
+        #toggle-btn {
+            position: absolute;
+            bottom: 25px;
+            right: 25px;
+            padding: 10px 20px;
+            background-color: rgba(107, 126, 150, 0.2); /* 海浪深蓝色透明 */
+            border: 1px solid #6b7e96;
+            color: #6b7e96;
+            font-family: 'Courier New', monospace;
+            font-size: 13px;
+            cursor: pointer;
+            transition: all 0.3s;
+            z-index: 100;
+            outline: none;
+            border-radius: 4px;
+        }
+        #toggle-btn:hover {
+            background-color: rgba(107, 126, 150, 0.8);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <button id="toggle-btn" onclick="toggleInteraction()">INTERACTION: ON</button>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+    <script>
+        let particles = [];
+        let beachTexture;
+        const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789<>/[]{}";
+        let tideOffset = 0;
+        let tideSpeed = 0.01;
+        let currentGap = 15; // 图层之间的动态间距
+
+        let isInteractionEnabled = true;
+
+        const lyrics = [
+            { zh: "盼着望着\n但明天太远了", en: "Gazing and longing,\nBut tomorrow is too far away." },
+            { zh: "这就是我的生活\n太阳在坠落\n海浪在发愁\n不停地退后", en: "This is my life. The sun is falling,\nThe waves are grieving, retreating endlessly." },
+            { zh: "终于忘记你的时候\n你出现在我的梦里", en: "When I finally forget you,\nYou appear in my dreams." },
+            { zh: "人与蝉 蝉与狗 狗与深夜冲撞高处街灯的蛾\n所有浮生里万千的脸孔\n让我因为你们隆重", en: "Humans & cicadas, dogs & moths hitting streetlights,\nTen thousand faces in all floating lives,\nMake me solemn because of you." },
+            { zh: "人们火热 城市，何必寂寞\n我多爱你 但不因你而什么\n时光穿梭 我们不在左右只在彼此其中", en: "People are fervent, the city—why be lonely?\nI love you so much, but not because of anything,\nTime shuttles; we are within each other." }
+        ];
+
+        let lyricIndex = 0;
+        let hasSwitched = false;
+
+        function setup() {
+            createCanvas(windowWidth, windowHeight);
+            createBeachTexture();
+            textFont('Courier New', 'monospace');
+
+            let spacing = 14;
+            for (let x = -20; x < width + 20; x += spacing) {
+                for (let y = -height; y < height * 2.5; y += spacing) {
+                    let offX = random(-6, 6);
+                    let offY = random(-6, 6);
+                    particles.push(new Particle(x + offX, y + offY));
+                }
+            }
+        }
+
+        function toggleInteraction() {
+            isInteractionEnabled = !isInteractionEnabled;
+            let btn = document.getElementById('toggle-btn');
+            btn.innerText = isInteractionEnabled ? "INTERACTION: ON" : "INTERACTION: OFF";
+        }
+
+        function draw() {
+            drawBeach();
+
+            let waveCycle = sin(frameCount * tideSpeed);
+            tideOffset = map(waveCycle, -1, 1, height * 0.15, -height * 0.65);
+
+            // 动态计算图层间距
+            currentGap = map(waveCycle, -1, 1, 5, 30);
+
+            if (waveCycle > 0.95 && !hasSwitched) {
+                lyricIndex = (lyricIndex + 1) % lyrics.length;
+                hasSwitched = true;
+            }
+            if (waveCycle < 0) hasSwitched = false;
+
+            drawLyrics();
+
+            drawOceanWithTripleLayers();
+
+            for (let p of particles) {
+                let estY = p.originY + tideOffset;
+                if (estY > -100 && estY < height + 100) {
+                    p.update();
+                    p.display();
+                }
+            }
+        }
+
+        function drawBeach() {
+            if (beachTexture) image(beachTexture, 0, 0);
+        }
+
+        function drawLyrics() {
+            textAlign(CENTER, TOP);
+            let baseY = height * 0.1;
+            fill(120, 120, 120, 180);
+            textSize(14);
+            text(lyrics[lyricIndex].en, width/2, baseY);
+
+            fill(100, 100, 100, 200);
+            textSize(13);
+            let enLines = lyrics[lyricIndex].en.split('\n').length;
+            text(lyrics[lyricIndex].zh, width/2, baseY + enLines * 20 + 10);
+        }
+
+        function getMasterInteractionOffset(x) {
+            if (!isInteractionEnabled) return 0;
+            let darkBaseY = height * 0.45 + tideOffset;
+            let diffY = mouseY - darkBaseY;
+            let globalShift = diffY * 0.25;
+            let dx = abs(x - mouseX);
+            let interactionRadius = width * 0.5;
+            let localShift = 0;
+            if (dx < interactionRadius) {
+                let strengthX = pow(cos(map(dx, 0, interactionRadius, 0, HALF_PI)), 2);
+                localShift = diffY * 0.75 * strengthX;
+            }
+            return globalShift + localShift;
+        }
+
+        function getHighestWaveEdge(x) {
+            let mOffset = getMasterInteractionOffset(x);
+            let base_y3 = height * 0.45;
+            let base_y2 = base_y3 - currentGap;
+            let base_y1 = base_y2 - currentGap;
+
+            let n1 = noise(x * 0.006, frameCount * tideSpeed + 500);
+            let y1 = base_y1 + n1 * 140 + tideOffset + mOffset;
+            let n2 = noise(x * 0.0055, frameCount * tideSpeed + 250);
+            let y2 = base_y2 + n2 * 130 + tideOffset + mOffset;
+            let n3 = noise(x * 0.005, frameCount * tideSpeed);
+            let y3 = base_y3 + n3 * 120 + tideOffset + mOffset;
+
+            return min(y1, min(y2, y3));
+        }
+
+        function drawOceanWithTripleLayers() {
+            let offsets = [];
+            for (let x = 0; x <= width; x += 10) {
+                offsets[x] = getMasterInteractionOffset(x);
+            }
+            let baseDark = height * 0.45;
+            let baseLight = baseDark - currentGap;
+            let baseWhite = baseLight - currentGap;
+
+            fill(255, 255, 255, 180);
+            drawWaveShape(baseWhite, 0.006, 140, 500, offsets, 25);
+            fill('#8ea1b8');
+            drawWaveShape(baseLight, 0.0055, 130, 250, offsets, 12);
+            fill('#6b7e96');
+            drawWaveShape(baseDark, 0.005, 120, 0, offsets, 0);
+        }
+
+        function drawWaveShape(baseH, nScale, nAmp, tOff, offsets, jitterMag) {
+            noStroke();
+            beginShape();
+            vertex(0, height);
+            for (let x = 0; x <= width; x += 10) {
+                let n = noise(x * nScale, frameCount * tideSpeed + tOff);
+                let base_y = baseH + n * nAmp + tideOffset;
+                let mOffset = offsets[x] || 0;
+                let jitter = jitterMag > 0 ? (noise(x * 0.1, frameCount * 0.06 + tOff) - 0.5) * jitterMag : 0;
+                vertex(x, base_y + mOffset + jitter);
+            }
+            vertex(width, height);
+            endShape(CLOSE);
+        }
+
+        class Particle {
+            constructor(x, y) {
+                this.originX = x;
+                this.originY = y;
+                this.pos = createVector(x, y);
+                this.vel = createVector(0, 0);
+                this.char = chars.charAt(floor(random(chars.length)));
+                this.baseAlpha = random(80, 255);
+                this.rarity = random(0, 1);
+            }
+
+            update() {
+                let n = noise(this.originX * 0.005, this.originY * 0.005, frameCount * tideSpeed);
+                let currentTideY = this.originY + tideOffset + n * 30;
+                let target = createVector(this.originX, currentTideY);
+                let spring = p5.Vector.sub(target, this.pos);
+                spring.mult(0.05);
+                this.vel.add(spring);
+                this.pos.add(this.vel);
+                this.vel.mult(0.9);
+            }
+
+            display() {
+                let waveEdge = getHighestWaveEdge(this.pos.x);
+
+                if (this.pos.y > waveEdge) {
+                    let depth = this.pos.y - waveEdge;
+                    let densityThreshold = map(depth, 0, height, 1.0, 0.3, true);
+
+                    if (this.rarity < densityThreshold) {
+                        let colorWhite = color(255, 255, 255);
+                        let colorBlue = color(10, 30, 80);
+
+                        let transitionDist = 50;
+                        let lerpAmt = map(depth, 0, transitionDist, 0, 1, true);
+
+                        let finalCol = lerpColor(colorWhite, colorBlue, lerpAmt);
+                        finalCol.setAlpha(this.baseAlpha);
+
+                        fill(finalCol);
+                        textSize(11);
+                        noStroke();
+                        text(this.char, this.pos.x, this.pos.y);
+
+                        if (this.baseAlpha > 180) {
+                            text(this.char, this.pos.x + 0.5, this.pos.y);
+                        }
+                    }
+                }
+            }
+        }
+
+        function windowResized() {
+            resizeCanvas(windowWidth, windowHeight);
+            createBeachTexture();
+            particles = [];
+            setup();
+        }
+
+        function createBeachTexture() {
+            beachTexture = createGraphics(width, height);
+            beachTexture.background(242, 240, 233);
+            beachTexture.noStroke();
+            for (let i = 0; i < 15000; i++) {
+                beachTexture.fill(200, 190, 170, random(30, 100));
+                beachTexture.ellipse(random(width), random(height), random(1, 2.5));
+            }
+            for (let i = 0; i < 500; i++) {
+                beachTexture.fill(255, 255, 255, random(180, 255));
+                let x = random(width);
+                let y = random(height);
+                let size = random(1, 2.5);
+                beachTexture.ellipse(x, y, size, size);
+                if (random(1) > 0.9) {
+                    beachTexture.fill(255, 255, 255, 50);
+                    beachTexture.ellipse(x, y, size * 3, size * 3);
+                }
+            }
+        }
+    </script>
+</body>
+</html>
+

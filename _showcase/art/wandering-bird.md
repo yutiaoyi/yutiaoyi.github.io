@@ -6,9 +6,9 @@ group: Digital Art
 ---
 
 <div class="p-4">
-  <a href="{{ '/showcase/wandering-bird/' | relative_url }}" class="d-block mb-3">
+  <a href="{{ '/showcase/digital-art/wandering-bird/' | relative_url }}" class="d-block mb-3">
     <img
-      src="{{ '/showcase/wandering-bird/cover.png' | relative_url }}"
+      src="{{ '/showcase/digital-art/wandering-bird/cover.png' | relative_url }}"
       alt="Wandering Bird cover"
       class="img-fluid rounded-xl"
       loading="lazy"
@@ -16,7 +16,7 @@ group: Digital Art
   </a>
   <h3 class="mb-2">Wandering Bird</h3>
   <p class="mb-3 text-muted">Wandering Bird, Wandering Person.</p>
-  <a class="btn btn-sm btn-outline-primary" href="{{ '/showcase/wandering-bird/' | relative_url }}">
+  <a class="btn btn-sm btn-outline-primary" href="{{ '/showcase/digital-art/wandering-bird/' | relative_url }}">
     Open
   </a>
 </div>

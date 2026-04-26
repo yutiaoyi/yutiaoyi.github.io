@@ -6,16 +6,16 @@ group: Digital Art
 ---
 
 <div class="p-4">
-  <a href="{{ '/showcase/ocean-tide/' | relative_url }}" class="d-block mb-3">
+  <a href="{{ '/showcase/digital-art/ocean-tide/' | relative_url }}" class="d-block mb-3">
     <img
-      src="{{ '/showcase/ocean-tide/cover.png' | relative_url }}"
+      src="{{ '/showcase/digital-art/ocean-tide/cover.png' | relative_url }}"
       alt="Interactive Ocean Tide cover"
       class="img-fluid rounded-xl"
       loading="lazy"
     >
   </a>
   <h3 class="mb-2">Interactive Ocean Tide</h3>
-  <a class="btn btn-sm btn-outline-primary" href="{{ '/showcase/ocean-tide/' | relative_url }}">
+  <a class="btn btn-sm btn-outline-primary" href="{{ '/showcase/digital-art/ocean-tide/' | relative_url }}">
     Open
   </a>
 </div>

@@ -6,7 +6,7 @@ group: Photography
 ---
 
 <div class="p-4">
-  <a href="{{ '/photography/' | relative_url }}" class="d-block mb-3 text-decoration-none">
+  <a href="{{ '/showcase/photography/' | relative_url }}" class="d-block mb-3 text-decoration-none">
     <div
       class="rounded-xl"
       style="
@@ -29,7 +29,7 @@ group: Photography
   </a>
   <h3 class="mb-2">Photography</h3>
   <p class="mb-3 text-muted">Series-driven, quiet viewing. Hover reveals the label.</p>
-  <a class="btn btn-sm btn-outline-primary" href="{{ '/photography/' | relative_url }}">
+  <a class="btn btn-sm btn-outline-primary" href="{{ '/showcase/photography/' | relative_url }}">
     Enter
   </a>
 </div>

@@ -6,9 +6,9 @@ group: Digital Art
 ---
 
 <div class="p-4">
-  <a href="{{ '/showcase/dali-mirror/' | relative_url }}" class="d-block mb-3">
+  <a href="{{ '/showcase/digital-art/dali-mirror/' | relative_url }}" class="d-block mb-3">
     <img
-      src="{{ '/showcase/dali-mirror/cover.png' | relative_url }}"
+      src="{{ '/showcase/digital-art/dali-mirror/cover.png' | relative_url }}"
       alt="Dali Mirror cover"
       class="img-fluid rounded-xl"
       loading="lazy"
@@ -16,7 +16,7 @@ group: Digital Art
   </a>
   <h3 class="mb-2">Dali Mirror</h3>
   <p class="mb-3 text-muted">A temporal mirror: rings, slices, and hand-tracked dislocation.</p>
-  <a class="btn btn-sm btn-outline-primary" href="{{ '/showcase/dali-mirror/' | relative_url }}">
+  <a class="btn btn-sm btn-outline-primary" href="{{ '/showcase/digital-art/dali-mirror/' | relative_url }}">
     Open
   </a>
 </div>

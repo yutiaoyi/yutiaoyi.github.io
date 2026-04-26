@@ -2,22 +2,6 @@
 layout: default
 title : HKUST (GZ)
 navbar_title: Photography
----
-
-<meta http-equiv="refresh" content="0; url={{ '/showcase/photography/hkust-gz/' | relative_url }}">
-<link rel="canonical" href="{{ '/showcase/photography/hkust-gz/' | relative_url }}">
-<script>
-  window.location.replace("{{ '/showcase/photography/hkust-gz/' | relative_url }}");
-</script>
-
-<p>
-  Redirecting to <a href="{{ '/showcase/photography/hkust-gz/' | relative_url }}">HKUST (GZ)</a>…
-</p>
-
----
-layout: default
-title : HKUST (GZ)
-navbar_title: Photography
 container_class: container-fluid px-0
 body_class: photo-body
 ---
@@ -28,7 +12,7 @@ body_class: photo-body
 <div class="photo-root">
   <div class="series-shell">
     <header class="series-topbar">
-      <a href="{{ '/photography/' | relative_url }}">Back to Photography</a>
+      <a href="{{ '/showcase/photography/' | relative_url }}">Back to Photography</a>
       <a href="{{ '/showcase' | relative_url }}">Real World</a>
     </header>
 
@@ -47,7 +31,7 @@ body_class: photo-body
         <div class="shot__media">
           <img
             class="shot__img"
-            src="{{ '/photography/HKUST%20(GZ)/' | append: n | append: '.jpg' | relative_url }}"
+            src="{{ '/showcase/photography/HKUST%20(GZ)/' | append: n | append: '.jpg' | relative_url }}"
             alt="HKUST (GZ) {{ n }}"
             loading="lazy"
           >

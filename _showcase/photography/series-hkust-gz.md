@@ -6,7 +6,7 @@ group: Photography
 ---
 
 <div class="p-4">
-  <a href="{{ '/photography/hkust-gz/' | relative_url }}" class="d-block mb-3">
+  <a href="{{ '/showcase/photography/hkust-gz/' | relative_url }}" class="d-block mb-3">
     <div
       class="rounded-xl"
       style="
@@ -31,7 +31,7 @@ group: Photography
   </a>
   <h3 class="mb-2">HKUST (GZ)</h3>
   <p class="mb-3 text-muted">Architecture, light, and long corridors.</p>
-  <a class="btn btn-sm btn-outline-primary" href="{{ '/photography/hkust-gz/' | relative_url }}">
+  <a class="btn btn-sm btn-outline-primary" href="{{ '/showcase/photography/hkust-gz/' | relative_url }}">
     Open
   </a>
 </div>

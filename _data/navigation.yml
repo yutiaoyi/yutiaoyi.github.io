@@ -5,5 +5,9 @@ pages:
   url: /publications
 - name: Projects
   url: /projects
+- name: Digital Art
+  url: /showcase#group-digital-art
+- name: Photography
+  url: /showcase/photography/
 - name: Showcase
   url: /showcase

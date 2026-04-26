@@ -6,7 +6,7 @@ group: Photography
 ---
 
 <div class="p-4">
-  <a href="{{ '/photography/noir-studies/' | relative_url }}" class="d-block mb-3">
+  <a href="{{ '/showcase/photography/noir-studies/' | relative_url }}" class="d-block mb-3">
     <div
       class="rounded-xl"
       style="
@@ -32,7 +32,7 @@ group: Photography
   </a>
   <h3 class="mb-2">Noir Studies</h3>
   <p class="mb-3 text-muted">Black room, white silence. Hover to read the label.</p>
-  <a class="btn btn-sm btn-outline-primary" href="{{ '/photography/noir-studies/' | relative_url }}">
+  <a class="btn btn-sm btn-outline-primary" href="{{ '/showcase/photography/noir-studies/' | relative_url }}">
     Open
   </a>
 </div>
