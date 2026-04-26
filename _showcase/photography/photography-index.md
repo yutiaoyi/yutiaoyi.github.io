@@ -28,7 +28,7 @@ group: Photography
     </div>
   </a>
   <h3 class="mb-2">Photography</h3>
-  <p class="mb-3 text-muted">Carving Light, Catching Time.</p>
+  <p class="mb-3 text-muted">Main Entry: Carving Light, Catching Time.</p>
   <a class="btn btn-sm btn-outline-primary" href="{{ '/showcase/photography/' | relative_url }}">
     Enter
   </a>
