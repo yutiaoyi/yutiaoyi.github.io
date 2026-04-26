@@ -3,12 +3,13 @@
 /* Showcase-only visual system */
 
 :root {
-  --showcase-ink: #0b0f14;
-  --showcase-paper: #f3f0e8;
-  --showcase-mist: rgba(11, 15, 20, 0.08);
-  --showcase-wave-1: rgba(33, 71, 122, 0.35);
-  --showcase-wave-2: rgba(18, 119, 153, 0.25);
-  --showcase-accent: #1a67ff;
+  /* When `photography.css` is loaded (Showcase page does), reuse its palette. */
+  --showcase-ink: var(--photo-ink, rgba(255, 255, 255, 0.92));
+  --showcase-paper: var(--photo-bg, #000);
+  --showcase-mist: var(--photo-stroke-2, rgba(255, 255, 255, 0.08));
+  --showcase-wave-1: rgba(255, 255, 255, 0.10);
+  --showcase-wave-2: rgba(255, 255, 255, 0.06);
+  --showcase-accent: rgba(255, 255, 255, 0.92);
 }
 
 .showcase-root {
@@ -30,21 +31,21 @@
   border-radius: 1.25rem;
   overflow: hidden;
   background:
-    radial-gradient(1200px 600px at 10% 10%, rgba(26, 103, 255, 0.14), transparent 55%),
-    radial-gradient(900px 500px at 90% 15%, rgba(18, 119, 153, 0.16), transparent 60%),
-    linear-gradient(180deg, rgba(243, 240, 232, 0.95), rgba(243, 240, 232, 0.86));
-  border: 1px solid rgba(11, 15, 20, 0.10);
+    radial-gradient(1200px 600px at 10% 10%, rgba(255, 255, 255, 0.06), transparent 55%),
+    radial-gradient(900px 500px at 90% 15%, rgba(255, 255, 255, 0.05), transparent 60%),
+    linear-gradient(180deg, rgba(0, 0, 0, 0.92), rgba(0, 0, 0, 0.985));
+  border: 1px solid var(--showcase-mist);
   box-shadow:
-    0 30px 80px rgba(11, 15, 20, 0.10),
-    0 2px 0 rgba(11, 15, 20, 0.08) inset;
+    0 30px 80px rgba(0, 0, 0, 0.38),
+    0 1px 0 rgba(255, 255, 255, 0.04) inset;
 }
 
 .showcase-hero__bg {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  opacity: 0.9;
-  mix-blend-mode: multiply;
+  opacity: 0.55;
+  mix-blend-mode: screen;
 }
 
 .showcase-ripple-canvas {
@@ -63,7 +64,7 @@
   letter-spacing: 0.08em;
   text-transform: uppercase;
   font-size: 0.85rem;
-  color: rgba(11, 15, 20, 0.62);
+  color: var(--photo-ink-faint, rgba(255, 255, 255, 0.42));
 }
 
 .showcase-hero__title {
@@ -71,13 +72,13 @@
   font-size: clamp(2.2rem, 4vw, 3.6rem);
   line-height: 1.02;
   color: var(--showcase-ink);
-  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.6);
+  text-shadow: none;
 }
 
 .showcase-hero__subtitle {
   margin: 0.8rem 0 1.4rem;
   max-width: 52rem;
-  color: rgba(11, 15, 20, 0.68);
+  color: var(--photo-ink-dim, rgba(255, 255, 255, 0.64));
   font-size: 1.05rem;
 }
 
@@ -93,9 +94,9 @@
   gap: 0.45rem;
   padding: 0.55rem 0.8rem;
   border-radius: 999px;
-  border: 1px solid rgba(11, 15, 20, 0.12);
-  background: rgba(255, 255, 255, 0.55);
-  color: rgba(11, 15, 20, 0.82);
+  border: 1px solid var(--showcase-mist);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--photo-ink-dim, rgba(255, 255, 255, 0.64));
   text-decoration: none;
   transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
   backdrop-filter: blur(10px);
@@ -103,8 +104,8 @@
 
 .showcase-group-nav a:hover {
   transform: translateY(-1px);
-  box-shadow: 0 14px 40px rgba(11, 15, 20, 0.14);
-  background: rgba(255, 255, 255, 0.72);
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.35);
+  background: rgba(255, 255, 255, 0.06);
 }
 
 .showcase-group {
@@ -121,7 +122,7 @@
   margin: 0;
   font-size: clamp(1.55rem, 2.2vw, 2.1rem);
   letter-spacing: 0.02em;
-  color: rgba(11, 15, 20, 0.92);
+  color: var(--showcase-ink);
   scroll-margin-top: 7rem;
 }
 
@@ -133,9 +134,9 @@
   height: 14px;
   opacity: 0.9;
   background:
-    radial-gradient(12px 6px at 12px 50%, rgba(33, 71, 122, 0.18), transparent 70%),
-    radial-gradient(10px 5px at 40px 50%, rgba(18, 119, 153, 0.20), transparent 70%),
-    linear-gradient(90deg, rgba(11, 15, 20, 0.10), rgba(11, 15, 20, 0.02), rgba(11, 15, 20, 0.10));
+    radial-gradient(12px 6px at 12px 50%, rgba(255, 255, 255, 0.12), transparent 70%),
+    radial-gradient(10px 5px at 40px 50%, rgba(255, 255, 255, 0.10), transparent 70%),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.10), rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.10));
   background-size: 80px 100%, 120px 100%, 100% 100%;
   background-repeat: repeat-x, repeat-x, no-repeat;
   filter: blur(0.15px);
@@ -153,7 +154,7 @@
 
 .showcase-group__tail {
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(11, 15, 20, 0.10), transparent);
+  background: linear-gradient(90deg, transparent, var(--showcase-mist), transparent);
   margin-top: 1.5rem;
 }
 
@@ -171,15 +172,15 @@
   inset: 0;
   pointer-events: none;
   background:
-    radial-gradient(800px 240px at 10% 0%, rgba(26, 103, 255, 0.14), transparent 55%),
-    radial-gradient(520px 240px at 95% 15%, rgba(18, 119, 153, 0.16), transparent 60%);
+    radial-gradient(800px 240px at 10% 0%, rgba(255, 255, 255, 0.07), transparent 55%),
+    radial-gradient(520px 240px at 95% 15%, rgba(255, 255, 255, 0.06), transparent 60%);
   opacity: 0;
   transition: opacity 220ms ease;
 }
 
 .showcase-card:hover {
   transform: translateY(-3px) rotate(-0.12deg);
-  box-shadow: 0 22px 70px rgba(11, 15, 20, 0.16);
+  box-shadow: 0 22px 70px rgba(0, 0, 0, 0.45);
   filter: saturate(1.02) contrast(1.02);
 }
 
