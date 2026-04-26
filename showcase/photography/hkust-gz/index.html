@@ -4,6 +4,17 @@ title : HKUST (GZ)
 navbar_title: Photography
 container_class: container-fluid px-0
 body_class: photo-body
+series_desc: "人生第一卷。"
+captions:
+  "01": { title: "", facts: "", desc: "" }
+  "02": { title: "", facts: "", desc: "" }
+  "03": { title: "", facts: "", desc: "" }
+  "04": { title: "", facts: "", desc: "" }
+  "05": { title: "", facts: "", desc: "" }
+  "06": { title: "", facts: "", desc: "" }
+  "07": { title: "", facts: "", desc: "" }
+  "08": { title: "", facts: "", desc: "" }
+  "09": { title: "", facts: "", desc: "" }
 ---
 
 <link rel="stylesheet" href="{{ '/assets/css/photography.css' | relative_url }}">
@@ -19,7 +30,7 @@ body_class: photo-body
     <div class="series-meta">
       <p class="photo-kicker">Series</p>
       <h1>HKUST (GZ)</h1>
-      <p>{{ site.data.photography_series.hkust_gz.desc }}</p>
+      <p>{{ page.series_desc }}</p>
     </div>
 
     <div class="series-wall">
@@ -36,11 +47,12 @@ body_class: photo-body
         </div>
 
         <aside class="shot__panel" aria-label="Caption">
+          {%- assign cap = page.captions[n] -%}
           <div class="line1">
-            <h2 class="shot__title">{{ n }} — HKUST (GZ)</h2>
-            <p class="shot__facts">—</p>
+            <h2 class="shot__title">{{ cap.title | default: n | append: " — HKUST (GZ)" }}</h2>
+            <p class="shot__facts">{{ cap.facts | default: "—" }}</p>
           </div>
-          <p class="shot__desc">Edit this caption in `photography/hkust-gz/index.html`.</p>
+          <p class="shot__desc">{{ cap.desc | default: "" }}</p>
         </aside>
       </article>
       {% endfor %}

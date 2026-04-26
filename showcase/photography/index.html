@@ -4,6 +4,15 @@ title : Photography
 navbar_title: Photography
 container_class: container-fluid px-0
 body_class: photo-body
+series:
+  - slug: fantasy
+    title: Fantasy
+    cover: /showcase/photography/fantasy/cover.jpg
+    desc: "梦想，理想，幻想，狂想，妄想。"
+  - slug: hkust-gz
+    title: HKUST (GZ)
+    cover: /showcase/photography/hkust-gz/cover.jpg
+    desc: "人生第一卷。"
 ---
 
 <link rel="stylesheet" href="{{ '/assets/css/photography.css' | relative_url }}">
@@ -29,31 +38,20 @@ body_class: photo-body
     <div class="photo-divider" aria-hidden="true"></div>
 
     <main class="photo-grid" id="series">
+      {% for s in page.series %}
       <article class="series-card">
-        <a href="{{ '/showcase/photography/fantasy/' | relative_url }}" aria-label="Open Fantasy series">
+        <a href="{{ '/showcase/photography/' | append: s.slug | append: '/' | relative_url }}" aria-label="Open {{ s.title }} series">
           <div class="series-card__media" aria-hidden="true" style="background:
-            url('{{ '/showcase/photography/fantasy/cover.jpg' | relative_url }}') center/cover no-repeat,
+            url('{{ s.cover | relative_url }}') center/cover no-repeat,
             radial-gradient(1200px 520px at 65% 20%, rgba(255,255,255,0.07), transparent 60%),
             linear-gradient(180deg, rgba(0,0,0,0.92), rgba(0,0,0,0.99));"></div>
           <div class="series-card__body">
-            <h2 class="series-card__title">Fantasy</h2>
-            <p class="series-card__desc">{{ site.data.photography_series.fantasy.desc }}</p>
+            <h2 class="series-card__title">{{ s.title }}</h2>
+            <p class="series-card__desc">{{ s.desc }}</p>
           </div>
         </a>
       </article>
-
-      <article class="series-card">
-        <a href="{{ '/showcase/photography/hkust-gz/' | relative_url }}" aria-label="Open HKUST (GZ) series">
-          <div class="series-card__media" aria-hidden="true" style="background:
-            url('{{ '/showcase/photography/hkust-gz/cover.jpg' | relative_url }}') center/cover no-repeat,
-            radial-gradient(1200px 520px at 40% 20%, rgba(255,255,255,0.06), transparent 62%),
-            linear-gradient(180deg, rgba(0,0,0,0.92), rgba(0,0,0,0.99));"></div>
-          <div class="series-card__body">
-            <h2 class="series-card__title">HKUST (GZ)</h2>
-            <p class="series-card__desc">{{ site.data.photography_series.hkust_gz.desc }}</p>
-          </div>
-        </a>
-      </article>
+      {% endfor %}
     </main>
 
     <div class="photo-divider" aria-hidden="true"></div>
