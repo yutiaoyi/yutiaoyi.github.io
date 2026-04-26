@@ -15,7 +15,7 @@ group: Digital Art
     >
   </a>
   <h3 class="mb-2">Dali Mirror</h3>
-  <p class="mb-3 text-muted">A temporal mirror: rings, slices, and hand-tracked dislocation.</p>
+  <p class="mb-3 text-muted">Sometimes, I cannot distinguish reality from illusion.</p>
   <a class="btn btn-sm btn-outline-primary" href="{{ '/showcase/digital-art/dali-mirror/' | relative_url }}">
     Open
   </a>

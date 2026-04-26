@@ -14,7 +14,8 @@ group: Digital Art
       loading="lazy"
     >
   </a>
-  <h3 class="mb-2">Interactive Ocean Tide</h3>
+  <h3 class="mb-2">Waves</h3>
+  <p class="mb-3 text-muted">Always Together, Forever Apart.</p>
   <a class="btn btn-sm btn-outline-primary" href="{{ '/showcase/digital-art/ocean-tide/' | relative_url }}">
     Open
   </a>

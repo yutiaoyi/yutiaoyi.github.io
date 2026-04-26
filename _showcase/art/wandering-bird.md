@@ -14,7 +14,7 @@ group: Digital Art
       loading="lazy"
     >
   </a>
-  <h3 class="mb-2">Wandering Bird</h3>
+  <h3 class="mb-2">Wandering</h3>
   <p class="mb-3 text-muted">Wandering Bird, Wandering Person.</p>
   <a class="btn btn-sm btn-outline-primary" href="{{ '/showcase/digital-art/wandering-bird/' | relative_url }}">
     Open
